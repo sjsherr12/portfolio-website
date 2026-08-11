@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spencer Sherr</title>
+    <meta
+      name="description"
+      content="Spencer Sherr — computer science and mathematics at Princeton University. Projects, ventures, and experience."
+    />
+    <meta name="author" content="Spencer Sherr" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#FBFAF8" />
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:title" content="Spencer Sherr" />
+    <meta
+      property="og:description"
+      content="Computer science &amp; mathematics at Princeton University."
+    />
+    <meta property="og:type" content="website" />
+    <!-- TODO once deployed: add og:url and an og:image (1200×630 PNG) -->
+
+    <script>
+      // Apply the saved (or system) theme before first paint — prevents a
+      // flash of the wrong colors. Kept inline and dependency-free on purpose.
+      (function () {
+        var theme = "light";
+        try {
+          var stored = localStorage.getItem("theme");
+          if (stored === "light" || stored === "dark") {
+            theme = stored;
+          } else if (
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          ) {
+            theme = "dark";
+          }
+        } catch (e) {
+          /* storage unavailable — fall back to light */
+        }
+        document.documentElement.dataset.theme = theme;
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta && theme === "dark") meta.setAttribute("content", "#141210");
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
