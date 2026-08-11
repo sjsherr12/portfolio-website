@@ -8,13 +8,6 @@ export function Footer() {
         <p className="site-footer__copy">
           © {year} {profile.name} · {profile.location}
         </p>
-        <p className="site-footer__stack">
-          Designed &amp; built from scratch — React, TypeScript, hand-written
-          CSS
-        </p>
-        <a className="site-footer__top" href="#top">
-          Top ↑
-        </a>
       </div>
     </footer>
   );

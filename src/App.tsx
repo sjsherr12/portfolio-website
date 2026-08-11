@@ -5,7 +5,6 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Projects } from "./components/Projects";
-import { Ventures } from "./components/Ventures";
 import { useReveal } from "./hooks/useReveal";
 
 export default function App() {
@@ -19,10 +18,9 @@ export default function App() {
       <Header />
       <main id="main" className="wrap">
         <Hero />
-        <Projects />
-        <Ventures />
-        <Experience />
         <Education />
+        <Experience />
+        <Projects />
         <Contact />
       </main>
       <Footer />

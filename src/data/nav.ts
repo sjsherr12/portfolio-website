@@ -1,13 +1,12 @@
 /**
- * The page's sections, in order. Drives the header nav, the section numbering,
- * and scroll-position highlighting. If you ever add or remove a section,
- * update it here and in App.tsx.
+ * The page's sections, in order. Drives the header nav, the section order
+ * highlighting, and scroll-position tracking. If you ever add or remove a
+ * section, update it here and in App.tsx.
  */
 export const NAV_SECTIONS = [
-  { id: "projects", label: "Projects" },
-  { id: "ventures", label: "Ventures" },
-  { id: "experience", label: "Experience" },
   { id: "education", label: "Education" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
 ] as const;
 

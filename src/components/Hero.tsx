@@ -14,12 +14,9 @@ export function Hero() {
         </h1>
 
         <p className="hero__role" data-reveal style={delay(1)}>
-          Studying <em>{profile.focusA}</em>{" "}
-          <span className="hero__amp" aria-hidden="true">
-            &
-          </span>
-          <span className="visually-hidden">and</span> <em>{profile.focusB}</em>{" "}
-          at {profile.institution}, Class of {profile.classYear}.
+          Studying <strong>{profile.focusA}</strong> &{" "}
+          <strong>{profile.focusB}</strong> at {profile.institution}, Class of{" "}
+          {profile.classYear}.
         </p>
 
         <p className="hero__bio" data-reveal style={delay(2)}>
@@ -55,13 +52,6 @@ export function Hero() {
             Email
           </a>
         </div>
-
-        {profile.availability && (
-          <p className="hero__status" data-reveal style={delay(4)}>
-            <span className="status-dot" aria-hidden="true" />
-            {profile.availability}
-          </p>
-        )}
       </div>
 
       <figure className="hero__portrait" data-reveal style={delay(2)}>

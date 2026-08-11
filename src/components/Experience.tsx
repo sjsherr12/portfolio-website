@@ -5,7 +5,7 @@ import { Section } from "./Section";
 
 export function Experience() {
   return (
-    <Section id="experience" index="03" title="Experience">
+    <Section id="experience" title="Experience">
       <ul className="entry-list">
         {experience.map((e, i) => (
           <li

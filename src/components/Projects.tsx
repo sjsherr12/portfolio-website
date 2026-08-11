@@ -5,7 +5,7 @@ import { Section } from "./Section";
 
 export function Projects() {
   return (
-    <Section id="projects" index="01" title="Projects">
+    <Section id="projects" title="Projects">
       <ul className="project-list">
         {projects.map((p, i) => (
           <li
@@ -14,13 +14,11 @@ export function Projects() {
             data-reveal
             style={delay(Math.min(i, 4))}
           >
-            <span className="project__index" aria-hidden="true">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-
             <div className="project__body">
               <h3 className="project__title">
                 {p.href ? (
+                  // The link's ::after stretches over the whole row, so
+                  // clicking anywhere on the box opens it.
                   <a
                     className="project__link"
                     href={p.href}
@@ -39,20 +37,6 @@ export function Projects() {
                 )}
               </h3>
               <p className="project__desc">{p.description}</p>
-              <p className="project__meta">
-                <span className="project__tags">{p.tags.join(" · ")}</span>
-                {p.repoHref && (
-                  <a
-                    className="project__repo"
-                    href={p.repoHref}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Source
-                    <Icon name="arrow-up-right" size={11} />
-                  </a>
-                )}
-              </p>
             </div>
 
             <span className="project__year">{p.year}</span>

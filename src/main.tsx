@@ -3,8 +3,6 @@ import { createRoot } from "react-dom/client";
 
 // Self-hosted variable fonts (no external requests, no layout flash on repeat visits)
 import "@fontsource-variable/inter";
-import "@fontsource-variable/newsreader";
-import "@fontsource-variable/newsreader/wght-italic.css";
 import "@fontsource-variable/jetbrains-mono";
 
 import "./styles/global.css";

@@ -3,8 +3,8 @@
 
    Design language: "paper & ink"
    · Warm off-white paper / warm near-black ink, one burnt-orange accent
-   · Newsreader (serif) for display, Inter for body, JetBrains Mono for labels
-   · Hairline rules, numbered sections, generous whitespace
+   · Inter for everything, JetBrains Mono for small labels (dates, tags)
+   · Hairline rules, generous whitespace, no ornament
 
    Contents
    01 · Design tokens
@@ -32,12 +32,9 @@
   --text-tertiary: #918a7e;
   --border: rgba(32, 29, 25, 0.16);
   --border-faint: rgba(32, 29, 25, 0.09);
-  --accent: #c2410c;
+  --accent: #F46E1B;
   --accent-soft: rgba(194, 65, 12, 0.16);
-  --green: #3d8b4a;
 
-  --font-serif: "Newsreader Variable", "Newsreader", Georgia, "Times New Roman",
-    serif;
   --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, "Segoe UI",
     sans-serif;
   --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace,
@@ -59,7 +56,6 @@
   --border-faint: rgba(234, 231, 225, 0.09);
   --accent: #f08c4e;
   --accent-soft: rgba(240, 140, 78, 0.2);
-  --green: #5cc46f;
 
   color-scheme: dark;
 }
@@ -192,10 +188,9 @@ button {
 }
 
 .wordmark {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-weight: 550;
-  letter-spacing: -0.01em;
+  font-size: 1.02rem;
+  font-weight: 650;
+  letter-spacing: -0.015em;
   white-space: nowrap;
 }
 
@@ -205,12 +200,9 @@ button {
 
 .site-nav {
   display: flex;
-  gap: 1.35rem;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 450;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
+  gap: 1.4rem;
+  font-size: 0.86rem;
+  font-weight: 500;
 }
 
 .site-nav a {
@@ -261,11 +253,10 @@ button {
 }
 
 .hero__name {
-  font-family: var(--font-serif);
-  font-size: clamp(2.7rem, 7vw, 3.9rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
+  font-size: clamp(2.3rem, 5.5vw, 3.3rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
 }
 
 .hero__dot {
@@ -273,24 +264,14 @@ button {
 }
 
 .hero__role {
-  margin-top: 1.1rem;
-  font-size: 1.13rem;
+  margin-top: 1.05rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
 }
 
-.hero__role em {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.08em;
-  font-weight: 450;
+.hero__role strong {
+  font-weight: 550;
   color: var(--text);
-}
-
-.hero__amp {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.08em;
-  color: var(--accent);
 }
 
 .hero__bio {
@@ -361,37 +342,6 @@ button {
   color: var(--bg);
 }
 
-.hero__status {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.55rem;
-  margin-top: 1.6rem;
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  letter-spacing: 0.02em;
-  color: var(--text-tertiary);
-}
-
-.status-dot {
-  flex-shrink: 0;
-  width: 7px;
-  height: 7px;
-  margin-top: 0.36em; /* optically centers on the first line of text */
-  border-radius: 50%;
-  background: var(--green);
-  animation: pulse 2.4s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--green) 45%, transparent);
-  }
-  50% {
-    box-shadow: 0 0 0 5px transparent;
-  }
-}
-
 .hero__portrait {
   padding-top: 0.65rem;
 }
@@ -416,22 +366,14 @@ button {
 .section__head {
   display: flex;
   align-items: center;
-  gap: 1.1rem;
-  margin-bottom: 2.1rem;
-}
-
-.section__index {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  color: var(--accent);
+  gap: 1.25rem;
+  margin-bottom: 1.9rem;
 }
 
 .section__title {
-  font-family: var(--font-serif);
-  font-size: 1.65rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-size: 1.35rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
@@ -446,8 +388,8 @@ button {
 .project {
   position: relative;
   display: grid;
-  grid-template-columns: 2.6rem 1fr auto;
-  column-gap: 1.1rem;
+  grid-template-columns: 1fr auto;
+  column-gap: 1.25rem;
   padding: 1.55rem 1rem;
   margin-inline: -1rem;
   border-radius: 14px;
@@ -459,20 +401,21 @@ button {
   border-top-color: var(--border-faint);
 }
 
-.project:hover {
+/* Hover affordance only on rows that actually link somewhere */
+.project:has(.project__link):hover {
   background: var(--bg-subtle);
 }
 
-.project:hover + .project {
+.project:has(.project__link):hover + .project {
   border-top-color: transparent;
 }
 
-.project__index,
 .project__year {
   font-family: var(--font-mono);
   font-size: 0.76rem;
   color: var(--text-tertiary);
   padding-top: 0.22rem;
+  white-space: nowrap;
 }
 
 .project__title {
@@ -516,37 +459,6 @@ button {
   margin-top: 0.45rem;
   font-size: 0.94rem;
   color: var(--text-secondary);
-}
-
-.project__meta {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.1rem;
-  margin-top: 0.8rem;
-}
-
-.project__tags {
-  font-family: var(--font-mono);
-  font-size: 0.73rem;
-  letter-spacing: 0.01em;
-  color: var(--text-tertiary);
-}
-
-.project__repo {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.2rem;
-  font-family: var(--font-mono);
-  font-size: 0.73rem;
-  color: var(--text-secondary);
-  transition: color 0.15s ease;
-}
-
-.project__repo:hover {
-  color: var(--accent);
 }
 
 /* ── 08 · Entries (ventures / experience / education) ────────────────────── */
@@ -601,31 +513,6 @@ button {
   color: var(--accent);
 }
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin-left: 0.7rem;
-  padding: 0.16rem 0.6rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font-family: var(--font-mono);
-  font-size: 0.64rem;
-  font-weight: 450;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  vertical-align: 0.14em;
-}
-
-.badge--active::before {
-  content: "";
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--green);
-}
-
 .entry__desc {
   margin-top: 0.45rem;
   font-size: 0.94rem;
@@ -658,16 +545,14 @@ button {
 
 .contact__email {
   display: inline-block;
-  margin-top: 1.6rem;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(1.5rem, 4.5vw, 2.05rem);
-  font-weight: 450;
-  letter-spacing: -0.01em;
+  margin-top: 1.5rem;
+  font-size: clamp(1.25rem, 3.5vw, 1.6rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
   text-decoration: underline;
   text-decoration-color: var(--border);
   text-decoration-thickness: 1.5px;
-  text-underline-offset: 7px;
+  text-underline-offset: 6px;
   transition:
     color 0.15s ease,
     text-decoration-color 0.15s ease;
@@ -713,23 +598,10 @@ button {
 }
 
 .site-footer__inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.6rem 1.5rem;
   font-family: var(--font-mono);
   font-size: 0.71rem;
   letter-spacing: 0.01em;
   color: var(--text-tertiary);
-}
-
-.site-footer__top {
-  transition: color 0.15s ease;
-}
-
-.site-footer__top:hover {
-  color: var(--accent);
 }
 
 /* ── 11 · Reveal animation ───────────────────────────────────────────────── */
@@ -756,10 +628,6 @@ button {
     opacity: 1;
     transform: none;
     transition: none;
-  }
-
-  .status-dot {
-    animation: none;
   }
 
   * {
@@ -790,13 +658,8 @@ button {
   }
 
   .project {
-    grid-template-columns: 1fr auto;
     padding-inline: 0.85rem;
     margin-inline: -0.85rem;
-  }
-
-  .project__index {
-    display: none;
   }
 
   .entry {
@@ -815,8 +678,7 @@ button {
 @media print {
   .site-header,
   .skip-link,
-  .theme-toggle,
-  .site-footer__top {
+  .theme-toggle {
     display: none;
   }
 

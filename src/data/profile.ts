@@ -26,11 +26,6 @@ export const profile = {
    */
   bio: "I like building things end to end — sketching an idea, shipping the first version, and sticking around long enough to make it good. Before Princeton, that meant a mix of software projects and small businesses I started and ran myself. This site is a running record of that work.",
 
-  /** Small status line with the pulsing dot. Set to null to hide it. */
-  availability: "Open to internships and interesting collaborations" as
-    | string
-    | null,
-
   email: "sjsherr12@gmail.com",
 
   /**
@@ -57,6 +52,11 @@ export const profile = {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/your-handle", // TODO
       icon: "linkedin",
+    },
+    {
+      label: "X",
+      href: "https://x.com/your-handle", // TODO
+      icon: "x",
     },
   ] satisfies SocialLink[],
 };

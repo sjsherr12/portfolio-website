@@ -22,25 +22,16 @@ export interface SocialLink {
   icon: IconName;
 }
 
+/** One entry in the combined Projects section — a project OR a venture. */
 export interface Project {
   title: string;
+  /** A year ("2026") or a range ("2023 — Present"). */
   year: string;
   description: string;
-  /** Rendered as a mono "TypeScript · React · …" line. */
-  tags: string[];
-  /** Primary link (live site / demo). Makes the whole row clickable. */
-  href?: string;
-  /** Secondary link to the source code. */
-  repoHref?: string;
-}
-
-export interface Venture {
-  name: string;
-  role: string;
-  period: string;
-  description: string;
-  /** e.g. "Active", "Acquired", "Wound down" — omit to hide the badge. */
-  status?: string;
+  /**
+   * Live site, demo, or source — whatever best represents it. When present,
+   * the entire row becomes clickable; when absent, the row is plain text.
+   */
   href?: string;
 }
 

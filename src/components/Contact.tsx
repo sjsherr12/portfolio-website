@@ -4,7 +4,7 @@ import { Section } from "./Section";
 
 export function Contact() {
   return (
-    <Section id="contact" index="05" title="Contact">
+    <Section id="contact" title="Contact">
       <div className="contact" data-reveal>
         <p className="contact__lede">
           My inbox is always open — whether it&rsquo;s about an internship, a

@@ -19,22 +19,23 @@ npm run lint     # oxlint
 **All content lives in `src/data/`.** You should never need to touch a
 component to update the site:
 
-| File                     | What it controls                                       |
-| ------------------------ | ------------------------------------------------------ |
-| `src/data/profile.ts`    | Name, hero line, bio, email, socials, portrait, resume |
-| `src/data/projects.ts`   | The Projects section (ordered, strongest first)        |
-| `src/data/ventures.ts`   | Businesses — with an optional status badge             |
-| `src/data/experience.ts` | Internships, jobs, teaching                            |
-| `src/data/education.ts`  | Princeton + anything else                              |
-| `src/data/types.ts`      | The shapes of all of the above                         |
+| File                     | What it controls                                            |
+| ------------------------ | ----------------------------------------------------------- |
+| `src/data/profile.ts`    | Name, hero line, bio, email, socials, portrait, resume      |
+| `src/data/education.ts`  | Princeton + anything else                                   |
+| `src/data/experience.ts` | Internships, jobs, teaching                                 |
+| `src/data/projects.ts`   | Projects **and** ventures, one list — businesses get a `role` ("Founder") and an optional `status` badge |
+| `src/data/types.ts`      | The shapes of all of the above                              |
+
+Page order: **Education → Experience → Projects → Contact.**
 
 Every optional field (links, badges, coursework, resume) simply doesn't render
 when omitted — you can add entries sparsely and enrich them later.
 
 ### Before you publish — replacement checklist
 
-- [ ] Replace every SAMPLE entry in `projects.ts`, `ventures.ts`,
-      `experience.ts` (they are invented placeholders, marked with comments)
+- [ ] Replace every SAMPLE entry in `projects.ts` and `experience.ts`
+      (they are invented placeholders, marked with comments)
 - [ ] Fill in your real GitHub / LinkedIn URLs in `profile.ts`
 - [ ] Rewrite the `bio` in `profile.ts` in your own words
 - [ ] **Portrait**: drop a square photo (≥640×640, e.g. `portrait.jpg`) into
@@ -47,13 +48,12 @@ when omitted — you can add entries sparsely and enrich them later.
 ## Design notes
 
 The design language is **"paper & ink"**: warm off-white / warm near-black,
-one burnt-orange accent (a quiet Princeton nod), hairline rules, and numbered
-sections like a math paper.
+one burnt-orange accent (a quiet Princeton nod), hairline rules, and no
+ornament — straightforward first.
 
-- **Type**: [Newsreader](https://fonts.google.com/specimen/Newsreader) (serif
-  display + italics), [Inter](https://rsms.me/inter/) (body), JetBrains Mono
-  (dates, tags, indices). All self-hosted via Fontsource — no external
-  requests, works offline.
+- **Type**: [Inter](https://rsms.me/inter/) for everything (bold weights for
+  the name and headings), JetBrains Mono for small metadata (dates, tags).
+  Self-hosted via Fontsource — no external requests, works offline.
 - **Tokens**: every color/font/width is a CSS custom property at the top of
   `src/styles/global.css`. Change `--accent` there and the whole site follows.
 - **Theme**: light/dark follows the system by default; the toggle persists to
