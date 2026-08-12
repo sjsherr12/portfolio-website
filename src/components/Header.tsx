@@ -8,9 +8,8 @@ export function Header() {
   const { theme, toggle } = useTheme();
   const active = useActiveSection(NAV_IDS);
 
-  // The wordmark's href="#top" matches no id on purpose: the HTML spec then
-  // falls back to "scroll to top of the document". (An id="top" on this
-  // sticky header would break it — anchoring to a stuck element is a no-op.)
+  // "#top" matches no element id on purpose — browsers then scroll to the
+  // document top. Anchoring to the sticky header itself is a no-op when stuck.
   return (
     <header className="site-header">
       <div className="wrap site-header__inner">

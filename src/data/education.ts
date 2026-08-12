@@ -1,11 +1,6 @@
 import type { EducationItem } from "./types";
 
-/**
- * ─────────────────────────────────────────────────────────────────────────────
- *  Education. The Princeton entry is real (verify the details); the high
- *  school entry is a placeholder — fill it in or delete it.
- * ─────────────────────────────────────────────────────────────────────────────
- */
+// Education, newest first.
 export const education: EducationItem[] = [
   {
     school: "Princeton University",
@@ -17,14 +12,14 @@ export const education: EducationItem[] = [
     school: "Lawrence Technological University",
     credential: "Dual Enrollment",
     period: "2024 — 2026",
-    notes: ["Took a bunch of college courses while in hs like calc 3, diff eq, discrete math, comp arch, linear alg, operating systems, etc."],
+    notes: ["Took a bunch of college courses while in high school, like calc 3, diff eq, discrete math, comp arch, linear alg, and operating systems."],
   },
   {
     school: "Seaholm High School",
     credential: "High School Diploma",
     period: "2022 — 2026",
     notes: [
-      "Took combined 22 AP + dual enrollment courses, 4.81 GPA (no A-), National Merit Scholar, DECA ICDC",
+      "Took a combined 22 AP + dual enrollment courses, 4.81 GPA (no A-), National Merit Scholar, DECA ICDC",
     ],
   },
 ];

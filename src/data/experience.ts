@@ -1,11 +1,6 @@
 import type { ExperienceItem } from "./types";
 
-/**
- * ─────────────────────────────────────────────────────────────────────────────
- *  SAMPLE DATA — invented placeholders. Replace with your real experience.
- *  Add new entries at the top as you go through college.
- * ─────────────────────────────────────────────────────────────────────────────
- */
+// Experience, newest first.
 export const experience: ExperienceItem[] = [
   {
     role: "Software Engineering Intern",

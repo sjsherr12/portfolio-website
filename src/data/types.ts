@@ -1,9 +1,4 @@
-/**
- * Shared content types for the site.
- *
- * All page content lives in the files in this folder — you should be able to
- * keep this site up to date for four years without ever touching a component.
- */
+// Content types for the data files in this folder.
 
 export type IconName =
   | "github"
@@ -22,25 +17,16 @@ export interface SocialLink {
   icon: IconName;
 }
 
-/** One entry in the combined Projects section — a project OR a venture. */
+/** One entry in the Projects / Ventures section. */
 export interface Project {
   title: string;
   /** A year ("2026") or a range ("2023 — Present"). */
   year: string;
-  /**
-   * Supports inline links: "Partnered with [Name](https://…) to build…"
-   * (as do experience descriptions, education notes, and the hero bio).
-   */
+  /** Supports inline links: "[label](https://url)". */
   description: string;
-  /**
-   * Live site, demo, or source — whatever best represents it. When present,
-   * the entire row becomes clickable; when absent, the row is plain text.
-   */
+  /** When present, the entire row becomes clickable. */
   href?: string;
-  /**
-   * Technologies used — rendered as a small "SwiftUI · Firebase" line under
-   * the description. Omit for entries where it doesn't apply.
-   */
+  /** Rendered as a small "React · Firebase" line under the description. */
   tags?: string[];
 }
 
