@@ -9,16 +9,16 @@ import type { ExperienceItem } from "./types";
 export const experience: ExperienceItem[] = [
   {
     role: "Software Engineering Intern",
-    org: "Acme Systems",
-    period: "Summer 2025",
+    org: "Nolla Health",
+    period: "Summer 2026",
     description:
-      "Worked on internal tooling for the data team; shipped a dashboard that cut report turnaround from days to minutes.",
+      "Hired by founders after they noticed our work on Derm AI. Developed iOS front-end features in SwiftUI focused on reducing churn.",
   },
   {
-    role: "Teaching Assistant, AP Computer Science",
-    org: "Your High School",
-    period: "2024 — 2025",
+    role: "Research Intern",
+    org: "Wayne State University",
+    period: "Summer 2025",
     description:
-      "Ran weekly review sessions and graded projects for a class of 30+ students.",
+      "Conducted reinforcement learning research to evaluate LLM performance on multi-armed bandit problems.",
   },
 ];

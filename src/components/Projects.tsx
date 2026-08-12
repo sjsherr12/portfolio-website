@@ -1,11 +1,12 @@
 import { projects } from "../data/projects";
 import { Icon } from "./Icons";
+import { renderInline } from "./inline";
 import { delay } from "./reveal";
 import { Section } from "./Section";
 
 export function Projects() {
   return (
-    <Section id="projects" title="Projects">
+    <Section id="projects" title="Projects / Ventures">
       <ul className="project-list">
         {projects.map((p, i) => (
           <li
@@ -36,7 +37,10 @@ export function Projects() {
                   p.title
                 )}
               </h3>
-              <p className="project__desc">{p.description}</p>
+              <p className="project__desc">{renderInline(p.description)}</p>
+              {p.tags && p.tags.length > 0 && (
+                <p className="project__tags">{p.tags.join(" · ")}</p>
+              )}
             </div>
 
             <span className="project__year">{p.year}</span>

@@ -2,55 +2,51 @@ import type { Project } from "./types";
 
 /**
  * ─────────────────────────────────────────────────────────────────────────────
- *  SAMPLE DATA — every entry below (except the last) is invented placeholder
- *  content so you can see how the layout handles real-looking text.
- *  Replace with your actual work before publishing.
- *
  *  Projects and ventures share this one list.
  *   · `href` — live site, demo, or source. If present, the whole row is
  *     clickable (↗ arrow). If absent, the row is plain text.
+ *   · `tags` — technologies used, shown as a small line under the
+ *     description. Omit for entries where it doesn't apply.
  *   · Order matters: put your strongest work first.
  * ─────────────────────────────────────────────────────────────────────────────
  */
 export const projects: Project[] = [
   {
-    title: "Ledgerline",
-    year: "2026",
+    title: "GetPaid",
+    year: "2026 — Present",
     description:
-      "Lightweight bookkeeping for student-run businesses — double-entry accounting under the hood, plain English on top.",
-    href: "https://example.com", // TODO
+      "Partnered with [Sam Jarman](https://www.instagram.com/realsamjarman/) and [Addison Jarman](https://www.instagram.com/addison.jarman/) (combined 10M+ followers) to launch mobile app allowing users to find and save money.",
+    href: "https://trygetpaid.app/",
+    tags: ["React Native", "Firebase", "Appsflyer", "RevenueCat"], // TODO: confirm — my best guess at your stack
   },
   {
-    title: "Proofpad",
-    year: "2025",
+    title: "Derm AI",
+    year: "2025 — Present",
     description:
-      "A scratchpad for writing induction proofs that checks your base cases and flags unjustified steps as you type.",
-    href: "https://github.com/your-username/proofpad", // TODO
+      "Struggled with acne in high school, so built mobile app to deliver personalized skin analysis and commercially-available treatment recommendations. Developed a proprietary skincare database and scoring algorithm. Later partnered with [Dr. Dustin Portela](https://www.instagram.com/drdustinportela/).",
+    href: "https://apps.apple.com/us/app/derm-ai-skin-analysis/id6748288286",
+    tags: ["React Native", "Firebase", "OpenAI API"], // TODO: confirm — my best guess at your stack
   },
   {
-    title: "Shorefront Detailing",
-    year: "2023 — Present",
+    title: "SpareLot",
+    year: "2024 — 2026",
     description:
-      "Mobile car-detailing service I founded in high school. Grew from a bucket and a hose into steady weekend bookings and repeat clients — and my first real lessons in pricing, scheduling, and customer service.",
+      "Partnered with classmate from AP CSA to build peer-to-peer marketplace, connecting people searching for storage/parking to those with unused space. First real experience with production development of any kind.",
+    href: "https://sparelot.com/",
+    tags: ["React", "HTML", "CSS", "Node.js"], // TODO: confirm — my best guess at your stack
   },
   {
-    title: "Study Sprint",
-    year: "2024 — 2025",
+    title: "Sneaker Reselling",
+    year: "2018 — 2020",
     description:
-      "Small-group SAT tutoring I co-founded with two classmates. We ran cohorts of six students at a time; wound it down before college — but not before it paid for this laptop.",
+      "Automated system to buy sneakers for retail prices. Shoutout Sneakercon Toronto 2019 and Michigan Sneaker XChange. I know I've made it if I ever get to go on sneaker shopping with Complex.",
+    tags: ["Hustle", "Heart"], // TODO: confirm — my best guess at your stack
   },
   {
-    title: "Campus Courier",
-    year: "2025",
+    title: "Slime Business",
+    year: "2017",
     description:
-      "Peer-to-peer package routing for a school campus. Matched 400+ deliveries with a greedy assignment algorithm and a lot of duct tape.",
-  },
-  {
-    // This one is real — keep it if you like.
-    title: "This website",
-    year: "2026",
-    description:
-      "Designed and built from scratch — no templates, no UI kits. Hand-written CSS, typed content files, and a lot of small decisions.",
-    href: "https://github.com/your-username/portfolio-website", // TODO
+      "Made and sold slime to classmates in 4th grade. My most successful venture to date, as parents financed the costs in exchange for 0% equity or repayment.",
+    tags: ["Glue", "Borax", "Sometimes dad's shaving cream"],
   },
 ];

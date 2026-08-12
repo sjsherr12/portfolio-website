@@ -1,5 +1,6 @@
 import { profile } from "../data/profile";
 import { Icon } from "./Icons";
+import { renderInline } from "./inline";
 import { delay } from "./reveal";
 
 export function Hero() {
@@ -20,7 +21,7 @@ export function Hero() {
         </p>
 
         <p className="hero__bio" data-reveal style={delay(2)}>
-          {profile.bio}
+          {renderInline(profile.bio)}
         </p>
 
         <div className="hero__actions" data-reveal style={delay(3)}>

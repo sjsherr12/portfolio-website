@@ -32,7 +32,7 @@ export const profile = {
    * Portrait shown in the hero. Drop your photo into /public (a square crop,
    * ~640×640 or larger, works best) and change this to e.g. "/portrait.jpg".
    */
-  portrait: "/portrait-placeholder.svg", // TODO: replace with your photo
+  portrait: "/portrait.jpeg", // TODO: replace with your photo
   portraitAlt: "Portrait of Spencer Sherr",
 
   /**

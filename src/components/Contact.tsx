@@ -7,8 +7,7 @@ export function Contact() {
     <Section id="contact" title="Contact">
       <div className="contact" data-reveal>
         <p className="contact__lede">
-          My inbox is always open — whether it&rsquo;s about an internship, a
-          project, a half-formed startup idea, or just to say hello.
+          My inbox is always open. Feel free to reach out.
         </p>
         <a className="contact__email" href={`mailto:${profile.email}`}>
           {profile.email}

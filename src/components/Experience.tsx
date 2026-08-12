@@ -1,5 +1,6 @@
 import { experience } from "../data/experience";
 import { Icon } from "./Icons";
+import { renderInline } from "./inline";
 import { delay } from "./reveal";
 import { Section } from "./Section";
 
@@ -35,7 +36,7 @@ export function Experience() {
                   <span className="entry__org">{e.org}</span>
                 )}
               </h3>
-              <p className="entry__desc">{e.description}</p>
+              <p className="entry__desc">{renderInline(e.description)}</p>
             </div>
           </li>
         ))}

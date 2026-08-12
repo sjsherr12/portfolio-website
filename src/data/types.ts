@@ -27,12 +27,21 @@ export interface Project {
   title: string;
   /** A year ("2026") or a range ("2023 — Present"). */
   year: string;
+  /**
+   * Supports inline links: "Partnered with [Name](https://…) to build…"
+   * (as do experience descriptions, education notes, and the hero bio).
+   */
   description: string;
   /**
    * Live site, demo, or source — whatever best represents it. When present,
    * the entire row becomes clickable; when absent, the row is plain text.
    */
   href?: string;
+  /**
+   * Technologies used — rendered as a small "SwiftUI · Firebase" line under
+   * the description. Omit for entries where it doesn't apply.
+   */
+  tags?: string[];
 }
 
 export interface ExperienceItem {

@@ -461,6 +461,33 @@ button {
   color: var(--text-secondary);
 }
 
+.project__tags {
+  margin-top: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  letter-spacing: 0.01em;
+  color: var(--text-tertiary);
+}
+
+/* Inline links inside descriptions ([label](url) in the data files) */
+.inline-link {
+  position: relative;
+  z-index: 1; /* clickable above a project row's stretched whole-box link */
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--accent) 50%, transparent);
+  transition:
+    color 0.15s ease,
+    text-decoration-color 0.15s ease;
+}
+
+.inline-link:hover {
+  text-decoration-color: var(--accent);
+}
+
 /* ── 08 · Entries (ventures / experience / education) ────────────────────── */
 
 .entry {

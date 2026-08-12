@@ -1,4 +1,5 @@
 import { education } from "../data/education";
+import { renderInline } from "./inline";
 import { delay } from "./reveal";
 import { Section } from "./Section";
 
@@ -21,7 +22,7 @@ export function Education() {
               </p>
               {ed.notes?.map((note) => (
                 <p key={note} className="entry__desc">
-                  {note}
+                  {renderInline(note)}
                 </p>
               ))}
               {ed.coursework && ed.coursework.length > 0 && (
