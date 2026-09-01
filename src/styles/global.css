@@ -10,11 +10,12 @@
    06 · Sections
    07 · Projects
    08 · Entries (ventures / experience / education)
-   09 · Contact
-   10 · Footer
-   11 · Reveal animation
-   12 · Responsive
-   13 · Print
+   09 · Essays list & reading page
+   10 · Contact
+   11 · Footer
+   12 · Reveal animation
+   13 · Responsive
+   14 · Print
    ═══════════════════════════════════════════════════════════════════════════ */
 
 /* ── 01 · Design tokens ──────────────────────────────────────────────────── */
@@ -557,7 +558,183 @@ button {
   color: var(--text-tertiary);
 }
 
-/* ── 09 · Contact ────────────────────────────────────────────────────────── */
+/* ── 09 · Essays list & reading page ─────────────────────────────────────── */
+
+/* In the list, an essay row is a project row whose arrow points forward
+   (in-app) rather than up-and-out (external). */
+.project__arrow--right {
+  vertical-align: -0.02em;
+}
+
+.project__link:hover .project__arrow--right {
+  transform: translateX(3px);
+}
+
+/* The reading page sets its own, narrower measure — ~66 characters — rather
+   than inheriting the 44rem `.wrap` the home page uses. */
+.essay {
+  max-width: 38rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  padding-top: clamp(2.75rem, 7vw, 4rem);
+}
+
+.essay__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.01em;
+  color: var(--text-tertiary);
+  transition: color 0.15s ease;
+}
+
+.essay__back svg {
+  transition: transform 0.18s ease;
+}
+
+.essay__back:hover {
+  color: var(--accent);
+}
+
+.essay__back:hover svg {
+  transform: translateX(-3px);
+}
+
+.essay__head {
+  margin-top: 1.65rem;
+  padding-bottom: 2.1rem;
+  border-bottom: 1px solid var(--border-faint);
+}
+
+.essay__title {
+  font-size: clamp(1.85rem, 4.6vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.028em;
+  line-height: 1.14;
+  text-wrap: balance;
+}
+
+.essay__meta {
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.essay__meta-sep {
+  margin-inline: 0.5rem;
+}
+
+.essay__foot {
+  margin-top: 3.75rem;
+  padding-top: 2.1rem;
+  border-top: 1px solid var(--border-faint);
+}
+
+/* Long-form body copy. Slightly softer than --text so a wall of prose
+   doesn't glare, especially as pure white on dark. */
+.prose {
+  margin-top: 2.4rem;
+  font-size: 1.06rem;
+  line-height: 1.78;
+  color: color-mix(in srgb, var(--text) 86%, var(--bg));
+}
+
+.prose > * + * {
+  margin-top: 1.45rem;
+}
+
+/* Opening paragraph reads as a lede. */
+.prose > p:first-child {
+  font-size: 1.18rem;
+  line-height: 1.62;
+  color: var(--text);
+}
+
+.prose__heading {
+  margin-top: 2.75rem;
+  font-size: 1.18rem;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.prose strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.prose__quote {
+  margin-inline: 0;
+  padding-left: 1.3rem;
+  border-left: 2px solid color-mix(in srgb, var(--accent) 65%, transparent);
+  color: var(--text-secondary);
+}
+
+.prose__list {
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+
+.prose__list li + li {
+  margin-top: 0.5rem;
+}
+
+.prose__list ::marker {
+  color: var(--text-tertiary);
+}
+
+.prose__rule {
+  width: 100%;
+  height: 1px;
+  margin-block: 2.75rem;
+  border: none;
+  background: var(--border-faint);
+}
+
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  padding: 0.12em 0.36em;
+  border-radius: 5px;
+  background: var(--bg-subtle);
+}
+
+/* 404 */
+.notfound {
+  max-width: 38rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  padding-top: clamp(4rem, 13vw, 7rem);
+}
+
+.notfound__code {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+
+.notfound__title {
+  margin-top: 0.9rem;
+  font-size: clamp(1.75rem, 4.5vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.notfound__lede {
+  margin-top: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.notfound__action {
+  margin-top: 1.9rem;
+}
+
+/* ── 10 · Contact ────────────────────────────────────────────────────────── */
 
 .contact__lede {
   max-width: 34rem;
@@ -611,7 +788,7 @@ button {
   transform: translateY(-2px);
 }
 
-/* ── 10 · Footer ─────────────────────────────────────────────────────────── */
+/* ── 11 · Footer ─────────────────────────────────────────────────────────── */
 
 .site-footer {
   margin-top: clamp(4.5rem, 10vw, 6.5rem);
@@ -626,7 +803,7 @@ button {
   color: var(--text-tertiary);
 }
 
-/* ── 11 · Reveal animation ───────────────────────────────────────────────── */
+/* ── 12 · Reveal animation ───────────────────────────────────────────────── */
 
 [data-reveal] {
   opacity: 0;
@@ -657,7 +834,7 @@ button {
   }
 }
 
-/* ── 12 · Responsive ─────────────────────────────────────────────────────── */
+/* ── 13 · Responsive ─────────────────────────────────────────────────────── */
 
 @media (max-width: 760px) {
   .site-nav {
@@ -693,9 +870,17 @@ button {
   .entry__period {
     padding-top: 0;
   }
+
+  .prose {
+    font-size: 1.02rem;
+  }
+
+  .prose > p:first-child {
+    font-size: 1.1rem;
+  }
 }
 
-/* ── 13 · Print ──────────────────────────────────────────────────────────── */
+/* ── 14 · Print ──────────────────────────────────────────────────────────── */
 
 @media print {
   .site-header,
@@ -716,5 +901,14 @@ button {
 
   .section {
     margin-top: 2.5rem;
+  }
+
+  .essay__back,
+  .essay__foot {
+    display: none;
+  }
+
+  .prose {
+    color: #000;
   }
 }

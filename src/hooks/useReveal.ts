@@ -2,11 +2,13 @@ import { useEffect } from "react";
 
 /**
  * Fades elements marked [data-reveal] in as they enter the viewport.
- * Runs once from App. Respects prefers-reduced-motion (elements are simply
- * shown; the CSS also guards this). Elements can stagger themselves with a
- * --reveal-delay custom property.
+ * Runs from App, re-running whenever `key` changes (i.e. on navigation, when
+ * a different set of elements is on the page). Respects
+ * prefers-reduced-motion (elements are simply shown; the CSS also guards
+ * this). Elements can stagger themselves with a --reveal-delay custom
+ * property.
  */
-export function useReveal() {
+export function useReveal(key?: unknown) {
   useEffect(() => {
     const els = Array.from(
       document.querySelectorAll<HTMLElement>("[data-reveal]"),
@@ -43,5 +45,5 @@ export function useReveal() {
     els.forEach((el) => io.observe(el));
 
     return () => io.disconnect();
-  }, []);
+  }, [key]);
 }

@@ -75,6 +75,20 @@ export function Icon({ name, size = 16, className }: IconProps) {
           <path d="M8 7h9v9" />
         </svg>
       );
+    case "arrow-right":
+      return (
+        <svg {...common} {...stroke}>
+          <path d="M5 12h14" />
+          <path d="m13 6 6 6-6 6" />
+        </svg>
+      );
+    case "arrow-left":
+      return (
+        <svg {...common} {...stroke}>
+          <path d="M19 12H5" />
+          <path d="m11 18-6-6 6-6" />
+        </svg>
+      );
     case "sun":
       return (
         <svg {...common} {...stroke}>

@@ -8,6 +8,8 @@ export type IconName =
   | "instagram"
   | "file"
   | "arrow-up-right"
+  | "arrow-right"
+  | "arrow-left"
   | "sun"
   | "moon";
 
@@ -46,4 +48,22 @@ export interface EducationItem {
   notes?: string[];
   /** Optional mono line, e.g. relevant coursework. */
   coursework?: string[];
+}
+
+/**
+ * One essay, loaded from a Markdown file in `src/content/essays/`.
+ * See `essays.ts` for the frontmatter format.
+ */
+export interface Essay {
+  /** Filename without `.md` — also the URL: /essays/<slug>. */
+  slug: string;
+  title: string;
+  /** ISO date, e.g. "2026-09-01". Drives ordering and the displayed date. */
+  date: string;
+  /** One line, shown under the title in the essay list. */
+  blurb: string;
+  /** Raw Markdown body, rendered by `components/markdown.tsx`. */
+  body: string;
+  /** Estimated minutes to read, computed at load time. */
+  readingTime: number;
 }
