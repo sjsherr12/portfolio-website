@@ -5,7 +5,7 @@ export const education: EducationItem[] = [
   {
     school: "Princeton University",
     credential: "B.S.E., Computer Science",
-    period: "2026 — 2030",
+    period: "2026 — 2029",
     notes: ["Coursework: COS 226, COS 217, COS 445, MAT 215, MAT 217"],
   },
   {
